@@ -74,6 +74,9 @@ public class ListController {
                         Button btnRemove = new Button("Elimina");
                         btnRemove.setOnAction(event -> {
                             if (!model.getEmailList().isEmpty() ){
+                                /*email.setTesto(null);//se non setto questi campi a null l'ultima mail eliminata mantiene i dati
+                                email.setMittente(null);
+                                email.setArgomento(null);*/
                                 model.getEmailList().remove(email);
                             }
                         });

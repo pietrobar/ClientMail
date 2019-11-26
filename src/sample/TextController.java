@@ -30,13 +30,17 @@ public class TextController {
         model.currentEmailProperty().addListener(
                 ((observableValue, oldEmail, newEmail) ->{
 
-                    if (newEmail == null ) {
+                    if (newEmail==null || model.getEmailList().isEmpty() ) {
                         label.setText("");
-
+                        mittenteID.setText("");
+                        argomentoID.setText("");
                     } else {
-                        label.textProperty().bind(newEmail.testoProperty());
+                        /*label.textProperty().bind(newEmail.testoProperty());
                         mittenteID.textProperty().bind(newEmail.mittenteProperty());
-                        argomentoID.textProperty().bind(newEmail.argomentoProperty());
+                        argomentoID.textProperty().bind(newEmail.argomentoProperty());*/
+                        label.setText(newEmail.getTesto());
+                        mittenteID.setText("Mittente: "+newEmail.getMittente());
+                        argomentoID.setText("Oggetto: "+newEmail.getArgomento());
                     }
                 } )
         );
