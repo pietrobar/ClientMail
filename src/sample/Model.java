@@ -13,10 +13,10 @@ import java.io.File;
  * @author liliana
  */
 public class Model {
-
-    private final ObservableList<Email> emailList = FXCollections.observableArrayList(email ->
-            new Observable[] {email.idProperty()});
-
+    private ObservableList<Email> emailList = null;
+    public Model(){
+        this.emailList = FXCollections.observableArrayList();
+    }
     private final ObjectProperty<Email> currentEmail = new SimpleObjectProperty<>(null);
 
     public ObjectProperty<Email> currentEmailProperty() {

@@ -41,6 +41,8 @@ public class ListController {
             public void changed(ObservableValue<? extends Email> observableValue, Email oldSelection, Email newSelection) {
                 if (newSelection!=null)
                     model.setCurrentEmail(newSelection);
+                if(model.getEmailList().isEmpty())
+                    model.setCurrentEmail(null);//metto questa cosa in modo tale che quando la lista è vuota la email corrente venga messa a null e non rimanga l'ultima selezionata
             }
         });//posso anche scriverlo con la lambda espressione come avviene nel metodo sotto
             /*listView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) ->
