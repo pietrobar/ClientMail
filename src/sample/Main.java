@@ -12,12 +12,12 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         BorderPane root = new BorderPane();
         FXMLLoader listLoader = new FXMLLoader(getClass().getResource("listView.fxml"));
-        root.setCenter(listLoader.load());
+        root.setLeft(listLoader.load());
         ListController listController = listLoader.getController();
 
 
-        FXMLLoader textLoader = new FXMLLoader(getClass().getResource("label.fxml"));
-        root.setRight(textLoader.load());
+        FXMLLoader textLoader = new FXMLLoader(getClass().getResource("emailShow.fxml"));
+        root.setCenter(textLoader.load());
         TextController textController = textLoader.getController();
 
         Model model = new Model();

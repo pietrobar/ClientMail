@@ -5,7 +5,7 @@ import javafx.beans.property.StringProperty;
 
 /**
  *
- * @author liliana
+ * @author pietro
  */
 public class Email {
     private String id,mittente,destinatario,argomento,testo;

@@ -10,7 +10,7 @@ import java.io.File;
 
 /**
  *
- * @author liliana
+ * @author pietro
  */
 public class Model {
     private ObservableList<Email> emailList = null;

@@ -44,10 +44,10 @@ public class ListController {
                 if(model.getEmailList().isEmpty())
                     model.setCurrentEmail(null);//metto questa cosa in modo tale che quando la lista è vuota la email corrente venga messa a null e non rimanga l'ultima selezionata
             }
-        });//posso anche scriverlo con la lambda espressione come avviene nel metodo sotto
-            /*listView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) ->
-                model.setCurrentEmail(newSelection));*/
+        });
 
+        //setCellFactory è una fabbrica di Celle dove definisco il layout do ogni cella della ListView
+        //ha come parametro la ListView e ritorna la ListCell
         listView.setCellFactory((ListView<Email> param)   -> {
             return new ListCell<Email>() {
                 @Override
@@ -56,15 +56,15 @@ public class ListController {
 
                     if (email == null || empty) {
                         setText(null);
-                        setGraphic(null);//se non faccio setGraphic(null) non pulisce la grafica
+                        setGraphic(null);//se non faccio setGraphic(null) non pulisce la grafica!!!!!
                     } else {
 
-                        // Here we can build the layout we want for each ListCell. Let's use a HBox as our root.
+                        // Creo il layout per ogni cella
                         HBox root = new HBox(10);
                         root.setAlignment(CENTER_LEFT);
                         root.setPadding(new Insets(5, 10, 5, 10));
 
-                        // Within the root, we'll show the emailname on the left and our button to the right
+                        // Dentro la radice metto una label con l'email
                         root.getChildren().add(new Label(email.toString()));
 
                         // Serve per separare il bottone dalla label che mostra le email
@@ -76,9 +76,6 @@ public class ListController {
                         Button btnRemove = new Button("Elimina");
                         btnRemove.setOnAction(event -> {
                             if (!model.getEmailList().isEmpty() ){
-                                /*email.setTesto(null);//se non setto questi campi a null l'ultima mail eliminata mantiene i dati
-                                email.setMittente(null);
-                                email.setArgomento(null);*/
                                 model.getEmailList().remove(email);
                             }
                         });

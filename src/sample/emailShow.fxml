@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TextController">
+   <children>
+      <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="500.0" style="-fx-background-color: #8f8f8f;" text="Opzioni">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </MenuButton>
+      <Label fx:id="mittenteID" text="">
+         <padding>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </padding></Label>
+      <Label fx:id="argomentoID" text="">
+
+         <padding>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </padding></Label>
+
+      <Label fx:id="label" prefHeight="200.0" prefWidth="500.0" text="" wrapText="true">
+
+         <padding>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </padding></Label>
+
+   </children>
+</VBox>
